@@ -38,3 +38,6 @@ exports.jwtPassport = passport.use(
 );
 
 exports.verifyUser = passport.authenticate('jwt', {session: false});
+
+exports.verifyAdmin
+// going to be used as authenticate.verifyAdmin(
