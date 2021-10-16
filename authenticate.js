@@ -39,5 +39,27 @@ exports.jwtPassport = passport.use(
 
 exports.verifyUser = passport.authenticate('jwt', {session: false});
 
-exports.verifyAdmin
+exports.verifyAdmin = function(req, res, next) {
+    if (req.user.admin) {
+        return next();
+    } else {
+        const err = new Error("You are not authorized to perform this function.");
+        err.status = 403;
+        return next(err);
+    }
+}
+
+
+// NEXT BLOCK was middleware designed to provide access to edit/delete comments to admin or author of comment. Didn't work due to lack of access to 'campsite' as structured
+
+// exports.verifyCommentPermission = function(req, res, next) {
+//     if (req.user.admin || (campsite.comments.id(req.params.commentId).author._id === req.user._id)) {
+//         return next();
+//     } else {
+//         const err = new Error("You are not authorized to perform this function.");
+//         err.status = 403;
+//         return next(err);
+//     }
+// }
+
 // going to be used as authenticate.verifyAdmin(
