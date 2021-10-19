@@ -1,3 +1,6 @@
 node_modules
 testCredentials.txt
 testObjects.txt
+
+bin/server.key
+bin/server.cert
