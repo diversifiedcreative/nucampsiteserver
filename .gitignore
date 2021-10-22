@@ -2,5 +2,7 @@ node_modules
 testCredentials.txt
 testObjects.txt
 
+config.js
+
 bin/server.key
 bin/server.cert
