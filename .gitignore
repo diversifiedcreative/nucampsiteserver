@@ -1,8 +1,11 @@
 node_modules
+
+//testing
 testCredentials.txt
 testObjects.txt
+testCampsite.txt
 
+//contains sensitive info
 config.js
-
 bin/server.key
 bin/server.cert
